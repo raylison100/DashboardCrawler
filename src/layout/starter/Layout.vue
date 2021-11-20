@@ -1,0 +1,43 @@
+<template>
+  <div class="wrapper">
+    <side-bar>
+      <template slot="links">
+        <sidebar-link to="/dashboard" :name="$t('sidebar.dashboard')" icon="tim-icons icon-chart-pie-36"/>
+        <sidebar-link to="/sites" :name="$t('sidebar.sites')" icon="tim-icons icon-app"/>
+        <sidebar-link to="/novo" :name="$t('sidebar.novo')" icon="tim-icons icon-simple-add"/>
+      </template>
+    </side-bar>
+    <div class="main-panel">
+      <top-navbar></top-navbar>
+
+      <dashboard-content @click.native="toggleSidebar">
+
+      </dashboard-content>
+
+      <content-footer></content-footer>
+    </div>
+  </div>
+</template>
+<style lang="scss">
+</style>
+<script>
+  import TopNavbar from "./Navbar.vue";
+  import ContentFooter from "./Footer.vue";
+  import DashboardContent from "./Content.vue";
+  import MobileMenu from "./MobileMenu";
+  export default {
+    components: {
+      TopNavbar,
+      ContentFooter,
+      DashboardContent,
+      MobileMenu
+    },
+    methods: {
+      toggleSidebar() {
+        if (this.$sidebar.showSidebar) {
+          this.$sidebar.displaySidebar(false);
+        }
+      }
+    }
+  };
+</script>
