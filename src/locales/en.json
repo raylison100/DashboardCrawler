@@ -111,9 +111,10 @@
     ]
   },
   "sidebar": {
-    "title": "Creative Tim",
-    "shortTitle": "CT",
+    "title": "Dashboard Crawler",
+    "shortTitle": "DC",
     "dashboard": "dashboard",
+    "start": "Start",
     "sites": "sites",
     "novo": "novo",
     "icons": "Icons",

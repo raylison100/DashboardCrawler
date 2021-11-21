@@ -4,6 +4,7 @@
     <tr>
       <slot name="columns">
         <th v-for="column in columns" :key="column">{{column}}</th>
+        <th>Actions</th>
       </slot>
     </tr>
     </thead>
@@ -14,6 +15,17 @@
             :key="index"
             v-if="hasValue(item, column)">
           {{itemValue(item, column)}}
+        </td>
+        <td class="td-actions text-right">
+          <!-- <base-button type="info" size="sm" icon>  
+            <i class="tim-icons icon-single-02"></i>
+          </base-button>-->
+          <base-button type="success" size="sm" icon>
+            <i class="tim-icons icon-settings"></i>
+          </base-button> 
+          <base-button type="danger" size="sm" icon>
+            <i class="tim-icons icon-simple-remove"></i>
+          </base-button>
         </td>
       </slot>
     </tr>
@@ -66,4 +78,8 @@
   };
 </script>
 <style>
+  .td-actions{
+    justify-content: space-between;
+    display: flex;
+  }
 </style>

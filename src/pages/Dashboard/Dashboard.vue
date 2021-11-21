@@ -1,7 +1,7 @@
 <template>
   <div>
-        <div class="row">
-      <div class="col-lg-4" :class="{'text-right': isRTL}">
+    <div class="row">
+      <div class="col-lg-4">
         <card type="chart">
           <template slot="header">
             <h5 class="card-category">{{$t('dashboard.totalShipments')}}</h5>
@@ -18,7 +18,7 @@
           </div>
         </card>
       </div>
-      <div class="col-lg-4" :class="{'text-right': isRTL}">
+      <div class="col-lg-4">
         <card type="chart">
           <template slot="header">
             <h5 class="card-category">{{$t('dashboard.dailySales')}}</h5>
@@ -26,15 +26,15 @@
           </template>
           <div class="chart-area">
             <bar-chart style="height: 100%"
-                       chart-id="blue-bar-chart"
-                       :chart-data="blueBarChart.chartData"
-                       :gradient-stops="blueBarChart.gradientStops"
-                       :extra-options="blueBarChart.extraOptions">
+                      chart-id="blue-bar-chart"
+                      :chart-data="blueBarChart.chartData"
+                      :gradient-stops="blueBarChart.gradientStops"
+                      :extra-options="blueBarChart.extraOptions">
             </bar-chart>
           </div>
         </card>
       </div>
-      <div class="col-lg-4" :class="{'text-right': isRTL}">
+      <div class="col-lg-4">
         <card type="chart">
           <template slot="header">
             <h5 class="card-category">{{$t('dashboard.completedTasks')}}</h5>
@@ -57,13 +57,12 @@
         <card type="chart">
           <template slot="header">
             <div class="row">
-              <div class="col-sm-6" :class="isRTL ? 'text-right' : 'text-left'">
+              <div class="col-sm-6 text-left">
                 <h5 class="card-category">{{$t('dashboard.totalShipments')}}</h5>
                 <h2 class="card-title">{{$t('dashboard.performance')}}</h2>
               </div>
               <div class="col-sm-6">
-                <div class="btn-group btn-group-toggle"
-                     :class="isRTL ? 'float-left' : 'float-right'"
+                <div class="btn-group btn-group-toggle float-right"
                      data-toggle="buttons">
                   <label v-for="(option, index) in bigLineChartCategories"
                          :key="option"

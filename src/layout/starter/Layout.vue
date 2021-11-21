@@ -4,7 +4,7 @@
       <template slot="links">
         <sidebar-link to="/dashboard" :name="$t('sidebar.dashboard')" icon="tim-icons icon-chart-pie-36"/>
         <sidebar-link to="/sites" :name="$t('sidebar.sites')" icon="tim-icons icon-app"/>
-        <sidebar-link to="/novo" :name="$t('sidebar.novo')" icon="tim-icons icon-simple-add"/>
+        <sidebar-link to="/sites/create" :name="$t('sidebar.novo')" icon="tim-icons icon-simple-add"/>
       </template>
     </side-bar>
     <div class="main-panel">
@@ -37,7 +37,7 @@
         if (this.$sidebar.showSidebar) {
           this.$sidebar.displaySidebar(false);
         }
-      }
+      },
     }
   };
 </script>
