@@ -5,10 +5,13 @@
     "performance": "Performance",
     "simpleTable": "Simple Table",
     "totalShipments": "Total Shipments",
+    "sites": "Sites",
+    "dados": "Dados",
+    "dadosSensiveis": "Dados Sensiveis",
+    "dadosPessoais": "Dados Pessoais",
     "chartCategories": [
-      "Accounts",
-      "Purchases",
-      "Sessions"
+      "Persoal",
+      "Sensivel"
     ],
     "tasks": "Tasks({count})",
     "today": "Today",

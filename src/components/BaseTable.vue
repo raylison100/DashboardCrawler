@@ -10,7 +10,7 @@
         </tr>
       </thead>
       <tbody :class="tbodyClasses">
-        <tr v-for="(item, index) in table ? table : data" :key="index">
+        <tr v-for="(item, index) in data" :key="index">
           <slot :row="item">
             <td
               v-for="(column, index) in columns"
@@ -49,17 +49,11 @@
 </template>
 <script>
 import Paginate from "vuejs-paginate";
-import SiteService from "@/services/SiteService";
 
 export default {
   name: "base-table",
   components: {
     Paginate,
-  },
-  data() {
-    return {
-      table: null,
-    };
   },
   props: {
     columns: {
@@ -105,21 +99,7 @@ export default {
       return item[column.toLowerCase()];
     },
     clickCallback(pageNum) {
-      SiteService.pagination(pageNum)
-        .then((res) => {
-          if (!res.data.error) {
-            this.table = res.data.data;
-          }
-        })
-        .catch((err) => {
-          this.$notify({
-            type: "danger",
-            verticalAlign: "top",
-            horizontalAlign: "right",
-            message: err.message,
-          });
-          console.error(err);
-        });
+      this.$emit("pagination", pageNum);
     },
   },
 };
