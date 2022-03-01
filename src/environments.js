@@ -1,6 +1,6 @@
 export default {
 
-  api_gateway: 'http://127.0.0.1:3000',
+  api_gateway: 'http://gateway_server',
 
   sites: {
     list: '/sites/sites',
