@@ -2,8 +2,6 @@ FROM node:14-alpine as build-stage
 
 WORKDIR /app
 
-RUN npm install -g @vue/cli
-
 COPY . .
 
 RUN npm install
